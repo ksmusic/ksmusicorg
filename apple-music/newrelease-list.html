@@ -14,7 +14,7 @@ $.ajax({
    dataType : 'json',
    success: function(json){
 
-      var entries = json['feed']['entry'];      // ランキング情報の格納位置を取得
+      var entries = json['feed']['results'];      // ランキング情報の格納位置を取得
 
       jQuery.each(entries, function(cnt, entry) {
 
