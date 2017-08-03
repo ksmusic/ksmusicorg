@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+rss_url = "https://cdn.ksmusic.org/apple-music/json/newrelease.json";   
+$.ajax({
+   type: 'GET',
+   url: rss_url,
+   dataType : 'json',
+   success: function(json){
+
+      var entries = json['feed']['entry'];      // ランキング情報の格納位置を取得
+
+      jQuery.each(entries, function(cnt, entry) {
+
+         // --- ③
+         //   ここで1～100位のApp情報を取得する
+         //   各アプリを識別するIDは、 entry['id']['attributes']['im:id'] で取得
+         //   (SearchAPIのtrackIdと同値)
+
+      });
+   },
+   error: function(XMLHttpRequest, textStatus, errorThrown) {
+        // エラー処理
+   },
+   complete : function(data) {
+        // Ajax通信完了
+   }
+});
+</script>
+
+</body>
+</html>
